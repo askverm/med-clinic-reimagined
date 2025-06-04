@@ -1,140 +1,73 @@
 
-import { Heart, Users, Phone, Bell, Ambulance, Hospital, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Heart, Users, Phone, Bell, Ambulance, Hospital } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const Services = () => {
   const services = [
     {
       icon: Hospital,
       title: "Real-time Hospital Bed Booking",
-      description: "Instant availability & confirmation for hospital beds across India with verified partners.",
-      gradient: "from-blue-500 to-blue-600",
-      bgGradient: "from-blue-50 to-blue-100",
-      iconBg: "from-blue-100 to-blue-200",
-      hoverIconBg: "from-blue-500 to-blue-600"
+      description: "Instant availability & confirmation for hospital beds across India with verified partners."
     },
     {
       icon: Ambulance,
       title: "Emergency Ambulance Services",
-      description: "24/7 verified ambulance partners near you for immediate emergency response.",
-      gradient: "from-orange-500 to-orange-600",
-      bgGradient: "from-orange-50 to-orange-100",
-      iconBg: "from-orange-100 to-orange-200",
-      hoverIconBg: "from-orange-500 to-orange-600"
+      description: "24/7 verified ambulance partners near you for immediate emergency response."
     },
     {
       icon: Users,
       title: "Elder Care at Home",
-      description: "Daily support, companionship, and medical attention for your loved ones at home.",
-      gradient: "from-green-500 to-green-600",
-      bgGradient: "from-green-50 to-green-100",
-      iconBg: "from-green-100 to-green-200",
-      hoverIconBg: "from-green-500 to-green-600"
+      description: "Daily support, companionship, and medical attention for your loved ones at home."
     },
     {
       icon: Heart,
       title: "Bada Bhai / Badi Behen",
-      description: "Trusted peer emotional support system for youth facing life challenges.",
-      gradient: "from-blue-500 to-blue-600",
-      bgGradient: "from-blue-50 to-blue-100",
-      iconBg: "from-blue-100 to-blue-200",
-      hoverIconBg: "from-blue-500 to-blue-600"
+      description: "Trusted peer emotional support system for youth facing life challenges."
     },
     {
       icon: Bell,
       title: "AI Companion Bot",
-      description: "Combat loneliness with emotional release and daily check-ins through AI.",
-      gradient: "from-orange-500 to-orange-600",
-      bgGradient: "from-orange-50 to-orange-100",
-      iconBg: "from-orange-100 to-orange-200",
-      hoverIconBg: "from-orange-500 to-orange-600"
+      description: "Combat loneliness with emotional release and daily check-ins through AI."
     },
     {
       icon: Phone,
       title: "Online Consultations",
-      description: "Verified second opinions and online consultations with certified doctors.",
-      gradient: "from-green-500 to-green-600",
-      bgGradient: "from-green-50 to-green-100",
-      iconBg: "from-green-100 to-green-200",
-      hoverIconBg: "from-green-500 to-green-600"
+      description: "Verified second opinions and online consultations with certified doctors."
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-white via-orange-50 to-green-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-white to-orange-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="bg-gradient-to-r from-orange-500 to-green-500 bg-clip-text text-transparent">Care Services</span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Our <span className="text-orange-500">Care Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Complete healthcare ecosystem combining medical help, emergency response, and emotional wellness
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg bg-gradient-to-br ${service.bgGradient} h-full`}>
-                    <CardContent className="p-8 text-center h-full flex flex-col justify-between">
-                      <div>
-                        <div className="mb-6 flex justify-center">
-                          <div className={`bg-gradient-to-br ${service.iconBg} group-hover:bg-gradient-to-br group-hover:${service.hoverIconBg} rounded-full p-4 transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:scale-110`}>
-                            <service.icon className={`h-8 w-8 text-gray-700 group-hover:text-white transition-colors duration-500`} />
-                          </div>
-                        </div>
-                        <h3 className={`text-xl font-bold mb-4 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300`}>
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-700 leading-relaxed">{service.description}</p>
-                      </div>
-                      
-                      <div className="mt-6">
-                        <button className={`w-full py-3 px-6 rounded-full bg-gradient-to-r ${service.gradient} text-white font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100`}>
-                          Learn More
-                        </button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            
-            <CarouselPrevious className="hidden md:flex -left-12 h-12 w-12 bg-white hover:bg-orange-50 border-2 border-orange-200 hover:border-orange-300 text-orange-600 hover:text-orange-700 shadow-lg" />
-            <CarouselNext className="hidden md:flex -right-12 h-12 w-12 bg-white hover:bg-orange-50 border-2 border-orange-200 hover:border-orange-300 text-orange-600 hover:text-orange-700 shadow-lg" />
-          </Carousel>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-gradient-to-br from-orange-100 to-green-100 group-hover:from-orange-500 group-hover:to-green-500 rounded-full p-4 transition-all duration-300">
+                    <service.icon className="h-8 w-8 text-orange-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-orange-500 via-green-500 to-blue-500 text-white p-8 rounded-3xl inline-block shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
-            <h3 className="text-3xl font-bold mb-3">🚀 Launching Soon!</h3>
-            <p className="text-xl font-medium">CareSaathi.com & Mobile App</p>
-            <div className="mt-4 flex justify-center space-x-4">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-semibold">🏥 Healthcare</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-semibold">💝 Elder Care</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-semibold">🤖 AI Support</span>
-              </div>
-            </div>
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-orange-500 to-green-500 text-white p-6 rounded-2xl inline-block">
+            <h3 className="text-2xl font-bold mb-2">🚀 Launching Soon!</h3>
+            <p className="text-lg">CareSaathi.com & Mobile App</p>
           </div>
         </div>
       </div>
