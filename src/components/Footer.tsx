@@ -1,5 +1,5 @@
 
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
+import { Heart, Phone, Bell, Users } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,79 +8,93 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-blue-400 mb-6">MediCare Clinic</h3>
+            <div className="flex items-center mb-6">
+              <Heart className="h-8 w-8 text-orange-500 mr-2" />
+              <div>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text text-transparent">
+                  CareSaathi
+                </h3>
+                <p className="text-xs text-gray-400">Emotionally Intelligent Healthcare</p>
+              </div>
+            </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Providing exceptional healthcare services with compassion and expertise. Your health and well-being are our top priorities.
+              India's most affordable, connected, and emotionally intelligent healthcare & elder care platform. 
+              Building a care ecosystem for families, NRIs, seniors, and students.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
+              <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-full">
+                <Heart className="h-5 w-5" />
+              </div>
+              <div className="bg-gradient-to-r from-green-500 to-green-600 p-2 rounded-full">
+                <Users className="h-5 w-5" />
+              </div>
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-2 rounded-full">
+                <Phone className="h-5 w-5" />
+              </div>
+              <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-2 rounded-full">
+                <Bell className="h-5 w-5" />
+              </div>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><a href="#about" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-blue-400 transition-colors">Our Services</a></li>
-              <li><a href="#doctors" className="text-gray-300 hover:text-blue-400 transition-colors">Our Doctors</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Appointments</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Emergency Care</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Health Packages</a></li>
-            </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Medical Services</h3>
+            <h3 className="text-xl font-semibold mb-6 text-orange-400">Our Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Cardiology</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Neurology</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Orthopedics</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Pediatrics</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Ophthalmology</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">General Medicine</a></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">Hospital Bed Booking</span></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">Emergency Ambulance</span></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">Elder Care at Home</span></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">Emotional Support</span></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">AI Companion</span></li>
+              <li><span className="text-gray-300 hover:text-orange-400 transition-colors">Online Consultations</span></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6 text-green-400">Support</h3>
+            <ul className="space-y-3">
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">For Families</span></li>
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">For NRIs</span></li>
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">For Seniors</span></li>
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">For Students</span></li>
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">Bada Bhai/Behen</span></li>
+              <li><span className="text-gray-300 hover:text-green-400 transition-colors">24/7 Helpline</span></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Contact Info</h3>
+            <h3 className="text-xl font-semibold mb-6 text-blue-400">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <Phone className="h-5 w-5 text-orange-400 mr-3" />
+                <span className="text-gray-300">+91 98765 43210</span>
               </div>
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">info@medicareclinic.com</span>
+                <Bell className="h-5 w-5 text-green-400 mr-3" />
+                <span className="text-gray-300">care@caresaathi.com</span>
               </div>
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3 mt-1" />
-                <span className="text-gray-300">123 Medical Center Dr<br />City, ST 12345</span>
+                <Heart className="h-5 w-5 text-blue-400 mr-3 mt-1" />
+                <span className="text-gray-300">Pan India Services<br />Available 24/7</span>
               </div>
+            </div>
+            
+            <div className="mt-6 bg-gradient-to-r from-orange-500 to-green-500 p-4 rounded-lg">
+              <p className="text-white font-semibold">🚀 Launching Soon!</p>
+              <p className="text-white text-sm">CareSaathi.com & Mobile App</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 MediCare Clinic. All rights reserved.</p>
+            <p className="text-gray-400">© 2024 CareSaathi. Made with ❤️ for India's families.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Cookie Policy</a>
+              <span className="text-gray-400 hover:text-orange-400 transition-colors">Privacy Policy</span>
+              <span className="text-gray-400 hover:text-green-400 transition-colors">Terms of Service</span>
+              <span className="text-gray-400 hover:text-blue-400 transition-colors">Mission 2028</span>
             </div>
           </div>
         </div>
