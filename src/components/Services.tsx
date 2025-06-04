@@ -15,55 +15,55 @@ const Services = () => {
       icon: Hospital,
       title: "Real-time Hospital Bed Booking",
       description: "Instant availability & confirmation for hospital beds across India with verified partners.",
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "from-blue-50 to-cyan-50",
-      iconBg: "from-blue-100 to-cyan-100",
-      hoverIconBg: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-blue-600",
+      bgGradient: "from-blue-50 to-blue-100",
+      iconBg: "from-blue-100 to-blue-200",
+      hoverIconBg: "from-blue-500 to-blue-600"
     },
     {
       icon: Ambulance,
       title: "Emergency Ambulance Services",
       description: "24/7 verified ambulance partners near you for immediate emergency response.",
-      gradient: "from-red-500 to-pink-500",
-      bgGradient: "from-red-50 to-pink-50",
-      iconBg: "from-red-100 to-pink-100",
-      hoverIconBg: "from-red-500 to-pink-500"
+      gradient: "from-orange-500 to-orange-600",
+      bgGradient: "from-orange-50 to-orange-100",
+      iconBg: "from-orange-100 to-orange-200",
+      hoverIconBg: "from-orange-500 to-orange-600"
     },
     {
       icon: Users,
       title: "Elder Care at Home",
       description: "Daily support, companionship, and medical attention for your loved ones at home.",
-      gradient: "from-green-500 to-emerald-500",
-      bgGradient: "from-green-50 to-emerald-50",
-      iconBg: "from-green-100 to-emerald-100",
-      hoverIconBg: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-green-600",
+      bgGradient: "from-green-50 to-green-100",
+      iconBg: "from-green-100 to-green-200",
+      hoverIconBg: "from-green-500 to-green-600"
     },
     {
       icon: Heart,
       title: "Bada Bhai / Badi Behen",
       description: "Trusted peer emotional support system for youth facing life challenges.",
-      gradient: "from-purple-500 to-indigo-500",
-      bgGradient: "from-purple-50 to-indigo-50",
-      iconBg: "from-purple-100 to-indigo-100",
-      hoverIconBg: "from-purple-500 to-indigo-500"
+      gradient: "from-blue-500 to-blue-600",
+      bgGradient: "from-blue-50 to-blue-100",
+      iconBg: "from-blue-100 to-blue-200",
+      hoverIconBg: "from-blue-500 to-blue-600"
     },
     {
       icon: Bell,
       title: "AI Companion Bot",
       description: "Combat loneliness with emotional release and daily check-ins through AI.",
-      gradient: "from-yellow-500 to-orange-500",
-      bgGradient: "from-yellow-50 to-orange-50",
-      iconBg: "from-yellow-100 to-orange-100",
-      hoverIconBg: "from-yellow-500 to-orange-500"
+      gradient: "from-orange-500 to-orange-600",
+      bgGradient: "from-orange-50 to-orange-100",
+      iconBg: "from-orange-100 to-orange-200",
+      hoverIconBg: "from-orange-500 to-orange-600"
     },
     {
       icon: Phone,
       title: "Online Consultations",
       description: "Verified second opinions and online consultations with certified doctors.",
-      gradient: "from-teal-500 to-green-500",
-      bgGradient: "from-teal-50 to-green-50",
-      iconBg: "from-teal-100 to-green-100",
-      hoverIconBg: "from-teal-500 to-green-500"
+      gradient: "from-green-500 to-green-600",
+      bgGradient: "from-green-50 to-green-100",
+      iconBg: "from-green-100 to-green-200",
+      hoverIconBg: "from-green-500 to-green-600"
     }
   ];
 
@@ -121,7 +121,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-orange-500 via-pink-500 to-green-500 text-white p-8 rounded-3xl inline-block shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+          <div className="bg-gradient-to-r from-orange-500 via-green-500 to-blue-500 text-white p-8 rounded-3xl inline-block shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
             <h3 className="text-3xl font-bold mb-3">🚀 Launching Soon!</h3>
             <p className="text-xl font-medium">CareSaathi.com & Mobile App</p>
             <div className="mt-4 flex justify-center space-x-4">
