@@ -1,6 +1,4 @@
 
-import { Heart } from 'lucide-react';
-
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
   showTagline?: boolean;
@@ -10,21 +8,21 @@ const Logo = ({ size = 'md', showTagline = true }: LogoProps) => {
   const sizeClasses = {
     sm: {
       container: 'flex items-center',
-      heart: 'h-6 w-6',
+      logo: 'h-10 w-auto',
       title: 'text-lg',
       tagline: 'text-xs'
     },
     md: {
       container: 'flex items-center',
-      heart: 'h-8 w-8',
+      logo: 'h-12 w-auto',
       title: 'text-2xl',
-      tagline: 'text-xs'
+      tagline: 'text-sm'
     },
     lg: {
       container: 'flex items-center',
-      heart: 'h-12 w-12',
+      logo: 'h-16 w-auto',
       title: 'text-4xl',
-      tagline: 'text-sm'
+      tagline: 'text-base'
     }
   };
 
@@ -32,20 +30,22 @@ const Logo = ({ size = 'md', showTagline = true }: LogoProps) => {
 
   return (
     <div className={classes.container}>
-      <div className="bg-gradient-to-br from-red-500 to-blue-500 rounded-full p-2 mr-3">
-        <Heart className={`${classes.heart} text-white fill-white`} />
-      </div>
-      <div>
-        <div className={`${classes.title} font-bold`}>
-          <span className="text-red-500">Care</span>
-          <span className="text-blue-500">Saathi</span>
-        </div>
-        {showTagline && (
+      <img 
+        src="/lovable-uploads/a40d16cc-2d57-43e3-9b97-33df4f281d24.png" 
+        alt="CareSaathi Logo" 
+        className={classes.logo}
+      />
+      {showTagline && size === 'lg' && (
+        <div className="ml-4">
+          <div className={`${classes.title} font-bold`}>
+            <span className="text-red-500">Care</span>
+            <span className="text-blue-500">Saathi</span>
+          </div>
           <div className={`${classes.tagline} text-gray-600`}>
             apno ke liye apno jaisa saathi
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

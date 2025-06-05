@@ -4,7 +4,7 @@ import { Heart, Users, Bell, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-gradient-to-br from-blue-50 via-red-50 to-blue-50 py-20">
+    <section id="home" className="bg-gradient-to-br from-blue-50 via-white to-red-50 py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -63,9 +63,13 @@ const Hero = () => {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-100 via-red-100 to-blue-100 rounded-3xl h-96 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-blue-100 via-white to-red-100 rounded-3xl h-96 flex items-center justify-center p-8">
               <div className="text-center">
-                <Heart className="h-24 w-24 mx-auto mb-4 text-red-500" />
+                <img 
+                  src="/lovable-uploads/a40d16cc-2d57-43e3-9b97-33df4f281d24.png" 
+                  alt="CareSaathi Logo" 
+                  className="h-32 w-auto mx-auto mb-6"
+                />
                 <p className="text-lg font-semibold text-gray-700">Emotionally Intelligent Care</p>
                 <p className="text-gray-600 mt-2">Coming Soon to CareSaathi.com</p>
               </div>
