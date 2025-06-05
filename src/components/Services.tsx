@@ -7,41 +7,47 @@ const Services = () => {
     {
       icon: Hospital,
       title: "Real-time Hospital Bed Booking",
-      description: "Instant availability & confirmation for hospital beds across India with verified partners."
+      description: "Instant availability & confirmation for hospital beds across India with verified partners.",
+      color: "blue"
     },
     {
       icon: Ambulance,
-      title: "Emergency Ambulance Services",
-      description: "24/7 verified ambulance partners near you for immediate emergency response."
+      title: "Emergency Ambulance Services", 
+      description: "24/7 verified ambulance partners near you for immediate emergency response.",
+      color: "red"
     },
     {
       icon: Users,
       title: "Elder Care at Home",
-      description: "Daily support, companionship, and medical attention for your loved ones at home."
+      description: "Daily support, companionship, and medical attention for your loved ones at home.",
+      color: "blue"
     },
     {
       icon: Heart,
       title: "Bada Bhai / Badi Behen",
-      description: "Trusted peer emotional support system for youth facing life challenges."
+      description: "Trusted peer emotional support system for youth facing life challenges.",
+      color: "red"
     },
     {
       icon: Bell,
       title: "AI Companion Bot",
-      description: "Combat loneliness with emotional release and daily check-ins through AI."
+      description: "Combat loneliness with emotional release and daily check-ins through AI.",
+      color: "blue"
     },
     {
       icon: Phone,
       title: "Online Consultations",
-      description: "Verified second opinions and online consultations with certified doctors."
+      description: "Verified second opinions and online consultations with certified doctors.",
+      color: "red"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-white to-orange-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-white to-blue-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-orange-500">Care Services</span>
+            Our <span className="text-red-500">Care</span> <span className="text-blue-500">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Complete healthcare ecosystem combining medical help, emergency response, and emotional wellness
@@ -53,8 +59,8 @@ const Services = () => {
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white">
               <CardContent className="p-8 text-center">
                 <div className="mb-6 flex justify-center">
-                  <div className="bg-gradient-to-br from-orange-100 to-green-100 group-hover:from-orange-500 group-hover:to-green-500 rounded-full p-4 transition-all duration-300">
-                    <service.icon className="h-8 w-8 text-orange-600 group-hover:text-white transition-colors duration-300" />
+                  <div className={`${service.color === 'blue' ? 'bg-blue-100 group-hover:bg-blue-500' : 'bg-red-100 group-hover:bg-red-500'} rounded-full p-4 transition-all duration-300`}>
+                    <service.icon className={`h-8 w-8 ${service.color === 'blue' ? 'text-blue-600 group-hover:text-white' : 'text-red-600 group-hover:text-white'} transition-colors duration-300`} />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
@@ -65,7 +71,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-orange-500 to-green-500 text-white p-6 rounded-2xl inline-block">
+          <div className="bg-gradient-to-r from-red-500 to-blue-500 text-white p-6 rounded-2xl inline-block">
             <h3 className="text-2xl font-bold mb-2">🚀 Launching Soon!</h3>
             <p className="text-lg">CareSaathi.com & Mobile App</p>
           </div>
