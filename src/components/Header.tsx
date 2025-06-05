@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
-import { Menu, X, Phone, MapPin, Clock, Heart } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Logo from '@/components/Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,20 +34,7 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/c438b331-fe00-4f6a-89a9-d217112fa972.png" 
-              alt="CareSaathi Logo" 
-              className="h-12 w-auto mr-3"
-            />
-            <div>
-              <div className="text-2xl font-bold">
-                <span className="text-red-500">Care</span>
-                <span className="text-blue-500">Saathi</span>
-              </div>
-              <div className="text-xs text-gray-600">apno ke liye apno jaisa saathi</div>
-            </div>
-          </div>
+          <Logo size="md" showTagline={true} />
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
