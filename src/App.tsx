@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +18,7 @@ import HospitalDashboard from "./pages/hospital/HospitalDashboard";
 import AmbulanceDashboard from "./pages/ambulance/AmbulanceDashboard";
 import CaregiverDashboard from "./pages/caregiver/CaregiverDashboard";
 import NotFound from "./pages/NotFound";
+import MobileOptimizations from './components/MobileOptimizations';
 
 const queryClient = new QueryClient();
 
@@ -140,7 +140,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
-          <AppRoutes />
+          <MobileOptimizations>
+            <AppRoutes />
+          </MobileOptimizations>
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
