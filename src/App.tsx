@@ -8,6 +8,12 @@ import { AuthProvider, useAuth } from "@/context/AuthContext";
 import Index from "./pages/Index";
 import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
+import HospitalSearch from "./pages/user/HospitalSearch";
+import AmbulanceBooking from "./pages/user/AmbulanceBooking";
+import CaregiverBooking from "./pages/user/CaregiverBooking";
+import MentorshipBooking from "./pages/user/MentorshipBooking";
+import BookingHistory from "./pages/user/BookingHistory";
+import EmergencyRequest from "./pages/user/EmergencyRequest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +48,42 @@ const AppRoutes = () => {
       <Route path="/dashboard" element={
         <ProtectedRoute allowedRoles={['user']}>
           <Dashboard />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/hospitals" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <HospitalSearch />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/ambulance" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <AmbulanceBooking />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/caregivers" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <CaregiverBooking />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/mentorship" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <MentorshipBooking />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/bookings" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <BookingHistory />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/emergency" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <EmergencyRequest />
         </ProtectedRoute>
       } />
       
