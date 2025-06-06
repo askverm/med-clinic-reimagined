@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +33,42 @@ const ProtectedRoute = ({ children, allowedRoles }: { children: React.ReactNode,
   }
   
   return <>{children}</>;
+};
+
+const AdminDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Admin Panel</h1>
+      <p>Admin dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const HospitalDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Hospital Panel</h1>
+      <p>Hospital dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const AmbulanceDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Ambulance Driver Panel</h1>
+      <p>Driver dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const CaregiverDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Caregiver Panel</h1>
+      <p>Caregiver dashboard coming soon...</p>
+    </div>
+  );
 };
 
 const AppRoutes = () => {
@@ -88,42 +123,30 @@ const AppRoutes = () => {
       } />
       
       {/* Admin Routes */}
-      <Route path="/admin/*" element={
+      <Route path="/admin" element={
         <ProtectedRoute allowedRoles={['admin']}>
-          <div className="p-8 text-center">
-            <h1 className="text-2xl font-bold">Admin Panel</h1>
-            <p>Admin dashboard coming soon...</p>
-          </div>
+          <AdminDashboard />
         </ProtectedRoute>
       } />
       
       {/* Hospital Routes */}
-      <Route path="/hospital/*" element={
+      <Route path="/hospital" element={
         <ProtectedRoute allowedRoles={['hospital']}>
-          <div className="p-8 text-center">
-            <h1 className="text-2xl font-bold">Hospital Panel</h1>
-            <p>Hospital dashboard coming soon...</p>
-          </div>
+          <HospitalDashboard />
         </ProtectedRoute>
       } />
       
       {/* Ambulance Routes */}
-      <Route path="/ambulance/*" element={
+      <Route path="/ambulance-driver" element={
         <ProtectedRoute allowedRoles={['ambulance']}>
-          <div className="p-8 text-center">
-            <h1 className="text-2xl font-bold">Ambulance Driver Panel</h1>
-            <p>Driver dashboard coming soon...</p>
-          </div>
+          <AmbulanceDashboard />
         </ProtectedRoute>
       } />
       
       {/* Caregiver Routes */}
-      <Route path="/caregiver/*" element={
+      <Route path="/caregiver-panel" element={
         <ProtectedRoute allowedRoles={['caregiver']}>
-          <div className="p-8 text-center">
-            <h1 className="text-2xl font-bold">Caregiver Panel</h1>
-            <p>Caregiver dashboard coming soon...</p>
-          </div>
+          <CaregiverDashboard />
         </ProtectedRoute>
       } />
       
