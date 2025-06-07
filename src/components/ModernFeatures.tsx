@@ -4,6 +4,7 @@ import { Smartphone, MapPin, Clock, Shield, Star, Zap } from 'lucide-react';
 
 const ModernFeatures = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -11,14 +12,24 @@ const ModernFeatures = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in');
+            
+            // Animate feature cards with staggered delay
+            if (entry.target === featuresRef.current) {
+              const cards = entry.target.querySelectorAll('.feature-card');
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('animate-slide-in-up');
+                }, index * 100);
+              });
+            }
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = featuresRef.current?.querySelectorAll('.feature-card');
-    elements?.forEach((el) => observer.observe(el));
+    if (featuresRef.current) observer.observe(featuresRef.current);
+    if (headerRef.current) observer.observe(headerRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -59,7 +70,7 @@ const ModernFeatures = () => {
   return (
     <section className="py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-12 lg:mb-16">
+        <div ref={headerRef} className="text-center mb-12 lg:mb-16 opacity-0 transition-all duration-1000">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Why choose CareSaathi?
           </h2>
@@ -68,16 +79,18 @@ const ModernFeatures = () => {
           </p>
         </div>
 
-        <div ref={featuresRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div ref={featuresRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 opacity-0 transition-all duration-1000">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="feature-card opacity-0 transition-all duration-700"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="feature-card transform translate-y-8 opacity-0 transition-all duration-700"
+              style={{ 
+                transitionDelay: `${index * 100}ms`
+              }}
             >
-              <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full">
-                <div className="inline-flex p-3 rounded-2xl mb-6 bg-green-50">
-                  <feature.icon className="h-6 w-6 text-green-600" />
+              <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 h-full group">
+                <div className="inline-flex p-3 rounded-2xl mb-6 bg-green-50 group-hover:bg-green-100 transition-colors duration-300">
+                  <feature.icon className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
