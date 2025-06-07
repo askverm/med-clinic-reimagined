@@ -1,7 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Ambulance, Hospital, Heart, Users, Clock, Shield } from 'lucide-react';
+import { ArrowRight, Ambulance, Hospital, Heart, Users, Clock, Shield, Phone } from 'lucide-react';
 
 const ServicesBanner = () => {
   const bannerRef = useRef<HTMLDivElement>(null);
