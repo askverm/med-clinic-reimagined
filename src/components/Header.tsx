@@ -66,7 +66,7 @@ const Header = () => {
               <Heart className="mr-2 h-4 w-4" />
               Emergency Care
             </Button>
-            <Button variant="outline" className="border-2 border-blue-200 text-blue-700 hover:bg-blue-50 px-6 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:-translate-y-1">
+            <Button variant="outline" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:-translate-y-1">
               <Download className="mr-2 h-4 w-4" />
               Download App
             </Button>
@@ -96,7 +96,7 @@ const Header = () => {
                   <Heart className="mr-2 h-4 w-4" />
                   Emergency Care
                 </Button>
-                <Button variant="outline" className="border-2 border-blue-200 text-blue-700 hover:bg-blue-50 w-full rounded-xl font-medium text-sm py-2">
+                <Button variant="outline" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 w-full rounded-xl font-medium text-sm py-2">
                   <Download className="mr-2 h-4 w-4" />
                   Download App
                 </Button>

@@ -49,7 +49,7 @@ const ServicesBanner = () => {
       title: "Elder Care",
       description: "Dedicated care services for elderly patients with professional caregivers",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=400&q=80",
-      color: "green",
+      color: "red",
       features: ["Professional Care", "Regular Monitoring", "Family Updates"]
     },
     {
@@ -57,7 +57,7 @@ const ServicesBanner = () => {
       title: "Home Consultation",
       description: "Expert doctors visit your home for consultation and treatment",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=400&q=80",
-      color: "purple",
+      color: "blue",
       features: ["Home Visits", "Expert Doctors", "Follow-up Care"]
     }
   ];
@@ -72,7 +72,7 @@ const ServicesBanner = () => {
             Comprehensive Healthcare Services
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-            Healthcare services for <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">everyone</span>
+            Healthcare services for <span className="bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">everyone</span>
           </h2>
           <p className="text-sm lg:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
             From emergency response to routine care, we provide comprehensive healthcare solutions 
@@ -100,7 +100,7 @@ const ServicesBanner = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className={`absolute top-3 right-3 p-2 rounded-lg bg-white/95 backdrop-blur-sm shadow-lg`}>
-                  <service.icon className={`h-4 w-4 text-${service.color}-600`} />
+                  <service.icon className={`h-4 w-4 ${service.color === 'red' ? 'text-red-600' : 'text-blue-600'}`} />
                 </div>
               </div>
               
@@ -110,14 +110,14 @@ const ServicesBanner = () => {
                 
                 <div className="flex flex-wrap gap-1 mb-3">
                   {service.features.map((feature, idx) => (
-                    <span key={idx} className={`px-2 py-1 bg-${service.color}-50 text-${service.color}-700 rounded-full text-xs font-medium`}>
+                    <span key={idx} className={`px-2 py-1 ${service.color === 'red' ? 'bg-red-50 text-red-700' : 'bg-blue-50 text-blue-700'} rounded-full text-xs font-medium`}>
                       {feature}
                     </span>
                   ))}
                 </div>
                 
                 <Button 
-                  className={`w-full bg-${service.color}-600 hover:bg-${service.color}-700 text-white rounded-lg font-medium py-2 text-xs transition-all duration-300 group-hover:shadow-lg`}
+                  className={`w-full ${service.color === 'red' ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'} text-white rounded-lg font-medium py-2 text-xs transition-all duration-300 group-hover:shadow-lg`}
                 >
                   Book Now
                   <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
@@ -128,7 +128,7 @@ const ServicesBanner = () => {
         </div>
 
         {/* Compact CTA Banner */}
-        <div ref={ctaRef} className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-xl p-6 lg:p-8 text-white text-center relative overflow-hidden opacity-0 transition-all duration-1000 delay-700">
+        <div ref={ctaRef} className="bg-gradient-to-r from-red-600 via-blue-600 to-red-600 rounded-xl p-6 lg:p-8 text-white text-center relative overflow-hidden opacity-0 transition-all duration-1000 delay-700">
           <div className="relative z-10 max-w-3xl mx-auto">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium mb-3">
               <Clock className="w-3 h-3 mr-1" />
@@ -142,7 +142,7 @@ const ServicesBanner = () => {
               Get instant access to emergency care, hospital booking, and professional home care.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-4 lg:px-6 py-2 rounded-lg font-bold text-xs lg:text-sm transition-all duration-300 hover:scale-105 shadow-lg">
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 px-4 lg:px-6 py-2 rounded-lg font-bold text-xs lg:text-sm transition-all duration-300 hover:scale-105 shadow-lg">
                 <Phone className="mr-2 h-3 w-3 lg:h-4 lg:w-4" />
                 Call Emergency: +91 98765 43210
               </Button>

@@ -60,12 +60,12 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={heroRef} className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-8 lg:py-12 overflow-hidden">
+    <section ref={heroRef} className="relative bg-gradient-to-br from-blue-50 via-white to-red-50 py-8 lg:py-12 overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-5 w-16 h-16 lg:w-24 lg:h-24 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-10 right-5 w-20 h-20 lg:w-28 lg:h-28 bg-green-100 rounded-full opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 lg:w-16 lg:h-16 bg-red-100 rounded-full opacity-20 animate-pulse delay-500"></div>
+        <div className="absolute bottom-10 right-5 w-20 h-20 lg:w-28 lg:h-28 bg-red-100 rounded-full opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full opacity-20 animate-pulse delay-500"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Left Content */}
           <div ref={leftContentRef} className="space-y-4 opacity-0 transition-all duration-1000">
             <div className="space-y-3">
-              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-green-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-red-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
                 <Heart className="w-3 h-3 mr-1 text-red-500" />
                 India's Most Trusted Healthcare Platform
               </div>
@@ -81,7 +81,7 @@ const Hero = () => {
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
                 <span className="text-gray-900">Healthcare at your</span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">doorstep</span>
+                <span className="bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">doorstep</span>
               </h1>
               
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl">
@@ -94,7 +94,7 @@ const Hero = () => {
                 <Phone className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 Emergency Care
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-blue-200 text-blue-700 hover:bg-blue-50 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 transform hover:-translate-y-1">
+              <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 transform hover:-translate-y-1">
                 <PlayCircle className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 Watch Demo
               </Button>
@@ -103,8 +103,8 @@ const Hero = () => {
             {/* Trust indicators */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-4 h-4 text-green-600" />
+                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                  <Clock className="w-4 h-4 text-red-600" />
                 </div>
                 <div>
                   <p className="font-medium text-gray-900 text-xs">24/7 Available</p>
@@ -151,9 +151,9 @@ const Hero = () => {
                             {/* Floating icon */}
                             <div className="absolute -top-2 -right-2 bg-white rounded-lg p-2 shadow-xl">
                               {index === 0 && <Ambulance className="h-4 w-4 text-red-500" />}
-                              {index === 1 && <Heart className="h-4 w-4 text-green-500" />}
+                              {index === 1 && <Heart className="h-4 w-4 text-red-500" />}
                               {index === 2 && <Hospital className="h-4 w-4 text-blue-500" />}
-                              {index === 3 && <Shield className="h-4 w-4 text-purple-500" />}
+                              {index === 3 && <Shield className="h-4 w-4 text-blue-500" />}
                             </div>
                           </div>
                         </div>
@@ -167,7 +167,7 @@ const Hero = () => {
               
               {/* Floating elements */}
               <div className="absolute -z-10 top-6 right-6 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-30 animate-bounce"></div>
-              <div className="absolute -z-10 bottom-6 left-6 w-8 h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-green-200 to-green-300 rounded-full opacity-30 animate-bounce delay-1000"></div>
+              <div className="absolute -z-10 bottom-6 left-6 w-8 h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-red-200 to-red-300 rounded-full opacity-30 animate-bounce delay-1000"></div>
             </div>
           </div>
         </div>
@@ -177,12 +177,12 @@ const Hero = () => {
           {[
             { value: "24/7", label: "Emergency Response", icon: Clock, color: "red" },
             { value: "1000+", label: "Partner Hospitals", icon: Hospital, color: "blue" },
-            { value: "50K+", label: "Happy Families", icon: Users, color: "green" },
-            { value: "Pan India", label: "Coverage", icon: Star, color: "purple" }
+            { value: "50K+", label: "Happy Families", icon: Users, color: "red" },
+            { value: "Pan India", label: "Coverage", icon: Star, color: "blue" }
           ].map((stat, index) => (
             <div key={index} className="bg-white rounded-xl p-3 lg:p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center group" style={{ animationDelay: `${index * 150}ms` }}>
-              <div className={`w-8 h-8 lg:w-10 lg:h-10 mx-auto mb-2 rounded-lg flex items-center justify-center bg-${stat.color}-100 group-hover:scale-110 transition-transform duration-300`}>
-                <stat.icon className={`h-4 w-4 lg:h-5 lg:w-5 text-${stat.color}-600`} />
+              <div className={`w-8 h-8 lg:w-10 lg:h-10 mx-auto mb-2 rounded-lg flex items-center justify-center ${stat.color === 'red' ? 'bg-red-100' : 'bg-blue-100'} group-hover:scale-110 transition-transform duration-300`}>
+                <stat.icon className={`h-4 w-4 lg:h-5 lg:w-5 ${stat.color === 'red' ? 'text-red-600' : 'text-blue-600'}`} />
               </div>
               <div className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
               <div className="text-xs lg:text-sm text-gray-600 font-medium">{stat.label}</div>

@@ -70,7 +70,7 @@ const AiChatBox = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse"
+          className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse"
           size="lg"
         >
           <MessageCircle className="h-6 w-6" />
@@ -84,10 +84,10 @@ const AiChatBox = () => {
       <Card className={`bg-white shadow-2xl border-0 transition-all duration-300 ${
         isMinimized ? 'w-80 h-16' : 'w-80 h-96'
       }`}>
-        <CardHeader className="bg-gradient-to-r from-blue-600 to-green-600 text-white p-3 rounded-t-lg">
+        <CardHeader className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-3 rounded-t-lg">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
               <span className="font-medium text-sm">CareSaathi AI Assistant</span>
             </div>
             <div className="flex items-center space-x-1">

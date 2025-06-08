@@ -76,7 +76,7 @@ const Index = () => {
 
             <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
               <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-lg">🏥</span>
                 </div>
                 <CardTitle className="text-base font-semibold">Hospital Partners</CardTitle>
@@ -87,7 +87,7 @@ const Index = () => {
               <CardContent className="pt-0">
                 <Button 
                   onClick={() => navigate('/auth?type=hospital')}
-                  className="w-full bg-green-600 hover:bg-green-700 rounded-lg font-medium text-sm"
+                  className="w-full bg-red-600 hover:bg-red-700 rounded-lg font-medium text-sm"
                   size="sm"
                 >
                   Hospital Login
@@ -97,7 +97,7 @@ const Index = () => {
 
             <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
               <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-lg">🚑</span>
                 </div>
                 <CardTitle className="text-base font-semibold">Ambulance Drivers</CardTitle>
@@ -108,7 +108,7 @@ const Index = () => {
               <CardContent className="pt-0">
                 <Button 
                   onClick={() => navigate('/auth?type=ambulance')}
-                  className="w-full bg-red-600 hover:bg-red-700 rounded-lg font-medium text-sm"
+                  className="w-full bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm"
                   size="sm"
                 >
                   Driver Login
@@ -118,7 +118,7 @@ const Index = () => {
 
             <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
               <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-lg">👩‍⚕️</span>
                 </div>
                 <CardTitle className="text-base font-semibold">Caregivers</CardTitle>
@@ -129,7 +129,7 @@ const Index = () => {
               <CardContent className="pt-0">
                 <Button 
                   onClick={() => navigate('/auth?type=caregiver')}
-                  className="w-full bg-purple-600 hover:bg-purple-700 rounded-lg font-medium text-sm"
+                  className="w-full bg-red-600 hover:bg-red-700 rounded-lg font-medium text-sm"
                   size="sm"
                 >
                   Caregiver Login
