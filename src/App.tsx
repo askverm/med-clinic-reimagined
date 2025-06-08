@@ -13,12 +13,7 @@ import CaregiverBooking from "./pages/user/CaregiverBooking";
 import MentorshipBooking from "./pages/user/MentorshipBooking";
 import BookingHistory from "./pages/user/BookingHistory";
 import EmergencyRequest from "./pages/user/EmergencyRequest";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import HospitalDashboard from "./pages/hospital/HospitalDashboard";
-import AmbulanceDashboard from "./pages/ambulance/AmbulanceDashboard";
-import CaregiverDashboard from "./pages/caregiver/CaregiverDashboard";
 import NotFound from "./pages/NotFound";
-import MobileOptimizations from './components/MobileOptimizations';
 
 const queryClient = new QueryClient();
 
@@ -38,6 +33,42 @@ const ProtectedRoute = ({ children, allowedRoles }: { children: React.ReactNode,
   }
   
   return <>{children}</>;
+};
+
+const AdminDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Admin Panel</h1>
+      <p>Admin dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const HospitalDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Hospital Panel</h1>
+      <p>Hospital dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const AmbulanceDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Ambulance Driver Panel</h1>
+      <p>Driver dashboard coming soon...</p>
+    </div>
+  );
+};
+
+const CaregiverDashboard = () => {
+  return (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold">Caregiver Panel</h1>
+      <p>Caregiver dashboard coming soon...</p>
+    </div>
+  );
 };
 
 const AppRoutes = () => {
@@ -140,9 +171,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
-          <MobileOptimizations>
-            <AppRoutes />
-          </MobileOptimizations>
+          <AppRoutes />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>

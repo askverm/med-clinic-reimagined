@@ -1,10 +1,10 @@
+
 import React from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Ambulance, Hospital, Heart, Users, Phone, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import MobileHeader from '@/components/MobileHeader';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -57,10 +57,8 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <MobileHeader />
-      
-      {/* Desktop Header */}
-      <header className="hidden lg:block bg-white shadow-sm border-b">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div>
@@ -77,17 +75,9 @@ const Dashboard = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
-        {/* Mobile Welcome */}
-        <div className="lg:hidden mb-6">
-          <h1 className="text-xl font-semibold text-gray-900">
-            Welcome, {user?.name}
-          </h1>
-          <p className="text-sm text-gray-600">Your health companion</p>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center">
@@ -132,24 +122,24 @@ const Dashboard = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
-              <CardHeader className="pb-3">
+              <CardHeader>
                 <div className="flex items-center space-x-3">
-                  <div className={`p-2 lg:p-3 rounded-lg ${service.color}`}>
-                    <service.icon className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+                  <div className={`p-3 rounded-lg ${service.color}`}>
+                    <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-base lg:text-lg">{service.title}</CardTitle>
-                    <CardDescription className="text-sm">{service.description}</CardDescription>
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   onClick={() => navigate(service.route)}
-                  className="w-full h-10"
+                  className="w-full"
                 >
                   Access Service
                 </Button>
@@ -159,10 +149,10 @@ const Dashboard = () => {
         </div>
 
         {/* Emergency Quick Access */}
-        <Card className="mt-6 lg:mt-8 bg-gradient-to-r from-red-50 to-red-100 border-red-200">
-          <CardContent className="p-4 lg:p-6">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
-              <div className="text-center lg:text-left">
+        <Card className="mt-8 bg-gradient-to-r from-red-50 to-red-100 border-red-200">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between">
+              <div>
                 <h3 className="text-lg font-semibold text-red-900 mb-2">
                   Emergency Situation?
                 </h3>
@@ -172,7 +162,7 @@ const Dashboard = () => {
               </div>
               <Button 
                 onClick={() => navigate('/emergency')}
-                className="bg-red-600 hover:bg-red-700 text-white px-6 lg:px-8 py-3 text-lg w-full lg:w-auto"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg"
                 size="lg"
               >
                 SOS Emergency

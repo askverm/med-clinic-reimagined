@@ -1,193 +1,115 @@
 
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Bell, Phone, Ambulance, Hospital, Star, Clock, Shield, Download, PlayCircle } from 'lucide-react';
-import { useEffect, useRef } from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import { Heart, Users, Bell, Phone, Ambulance, Hospital } from 'lucide-react';
 
 const Hero = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const leftContentRef = useRef<HTMLDivElement>(null);
-  const rightContentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (heroRef.current) observer.observe(heroRef.current);
-    if (statsRef.current) observer.observe(statsRef.current);
-    if (leftContentRef.current) observer.observe(leftContentRef.current);
-    if (rightContentRef.current) observer.observe(rightContentRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const bannerImages = [
-    {
-      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
-      title: "Emergency Care",
-      subtitle: "24/7 Available"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
-      title: "Elder Care",
-      subtitle: "Professional Support"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
-      title: "Ambulance Service",
-      subtitle: "Quick Response"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80",
-      title: "Hospital Booking",
-      subtitle: "Instant Reservation"
-    }
-  ];
-
   return (
-    <section ref={heroRef} className="relative bg-gradient-to-br from-blue-50 via-white to-red-50 py-8 lg:py-12 overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-5 w-16 h-16 lg:w-24 lg:h-24 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-10 right-5 w-20 h-20 lg:w-28 lg:h-28 bg-red-100 rounded-full opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full opacity-20 animate-pulse delay-500"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-6xl mx-auto">
-          {/* Left Content */}
-          <div ref={leftContentRef} className="space-y-4 opacity-0 transition-all duration-1000">
-            <div className="space-y-3">
-              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-red-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-                <Heart className="w-3 h-3 mr-1 text-red-500" />
-                India's Most Trusted Healthcare Platform
-              </div>
-              
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-                <span className="text-gray-900">Healthcare at your</span>
-                <br />
-                <span className="bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">doorstep</span>
-              </h1>
-              
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl">
-                Get instant access to emergency ambulance, hospital booking, and professional home care services. Available 24/7 across India.
+    <section id="home" className="bg-gradient-to-br from-blue-50 via-white to-red-50 py-20">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="flex items-center mb-6">
+              <span className="bg-gradient-to-r from-red-500 to-blue-500 text-white px-6 py-3 rounded-full text-sm font-semibold">
+                🚀 India's First Emotionally Intelligent Healthcare Platform
+              </span>
+            </div>
+            
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">CareSaathi</span>
+              <br />
+              Your Companion 
+              <span className="text-blue-500"> in Care</span>
+            </h1>
+            
+            <div className="text-2xl font-semibold text-gray-700 mb-4">
+              "Apno ke liye apno jaisa saathi"
+            </div>
+            
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Because Care Should Never Be Distant. India's most reliable care network where AI meets empathy, 
+              combining emergency response, elderly care, and emotional wellness — all in one powerful ecosystem.
+            </p>
+
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl mb-8">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">🎯 Our Promise</h3>
+              <p className="text-gray-700 italic">
+                "You're never alone. Not on our watch. We make sure your emergency doesn't wait in a queue."
               </p>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Button size="lg" className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <Phone className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button size="lg" className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-lg px-8 py-4">
+                <Phone className="mr-2 h-5 w-5" />
                 Emergency Care
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 transform hover:-translate-y-1">
-                <PlayCircle className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                Watch Demo
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-blue-500 text-blue-600 hover:bg-blue-50">
+                Download App
               </Button>
             </div>
 
-            {/* Trust indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-4 h-4 text-red-600" />
+            {/* Key Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="text-center bg-white rounded-xl p-4 shadow-md">
+                <div className="flex justify-center mb-2">
+                  <Ambulance className="h-6 w-6 text-red-500" />
                 </div>
-                <div>
-                  <p className="font-medium text-gray-900 text-xs">24/7 Available</p>
-                  <p className="text-xs text-gray-600">Round the clock care</p>
-                </div>
+                <div className="text-lg font-bold text-gray-900">24/7</div>
+                <div className="text-xs text-gray-600">Emergency Response</div>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-blue-600" />
+              <div className="text-center bg-white rounded-xl p-4 shadow-md">
+                <div className="flex justify-center mb-2">
+                  <Hospital className="h-6 w-6 text-blue-500" />
                 </div>
-                <div>
-                  <p className="font-medium text-gray-900 text-xs">Verified Network</p>
-                  <p className="text-xs text-gray-600">Certified professionals</p>
+                <div className="text-lg font-bold text-gray-900">Live</div>
+                <div className="text-xs text-gray-600">Bed Booking</div>
+              </div>
+              <div className="text-center bg-white rounded-xl p-4 shadow-md">
+                <div className="flex justify-center mb-2">
+                  <Heart className="h-6 w-6 text-red-500" />
                 </div>
+                <div className="text-lg font-bold text-gray-900">Pan India</div>
+                <div className="text-xs text-gray-600">Coverage</div>
+              </div>
+              <div className="text-center bg-white rounded-xl p-4 shadow-md">
+                <div className="flex justify-center mb-2">
+                  <Users className="h-6 w-6 text-blue-500" />
+                </div>
+                <div className="text-lg font-bold text-gray-900">AI-Powered</div>
+                <div className="text-xs text-gray-600">Care</div>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Banner Carousel */}
-          <div ref={rightContentRef} className="relative opacity-0 transition-all duration-1000 delay-300">
-            <div className="relative">
-              <Carousel className="w-full max-w-sm lg:max-w-md mx-auto" opts={{ align: "start", loop: true }}>
-                <CarouselContent>
-                  {bannerImages.map((banner, index) => (
-                    <CarouselItem key={index}>
-                      <div className="relative">
-                        <div className="bg-white rounded-xl p-3 sm:p-4 shadow-2xl overflow-hidden border border-gray-100">
-                          <div className="relative">
-                            <img 
-                              src={banner.url} 
-                              alt={banner.title}
-                              className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-lg"
-                            />
-                            
-                            {/* Gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-lg"></div>
-                            
-                            {/* Content overlay */}
-                            <div className="absolute bottom-3 left-3 right-3 text-white">
-                              <h3 className="text-base sm:text-lg font-bold mb-1">{banner.title}</h3>
-                              <p className="text-xs sm:text-sm opacity-90">{banner.subtitle}</p>
-                            </div>
-                            
-                            {/* Floating icon */}
-                            <div className="absolute -top-2 -right-2 bg-white rounded-lg p-2 shadow-xl">
-                              {index === 0 && <Ambulance className="h-4 w-4 text-red-500" />}
-                              {index === 1 && <Heart className="h-4 w-4 text-red-500" />}
-                              {index === 2 && <Hospital className="h-4 w-4 text-blue-500" />}
-                              {index === 3 && <Shield className="h-4 w-4 text-blue-500" />}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="hidden lg:flex -left-4 bg-white shadow-lg border-0 hover:bg-gray-50" />
-                <CarouselNext className="hidden lg:flex -right-4 bg-white shadow-lg border-0 hover:bg-gray-50" />
-              </Carousel>
-              
-              {/* Floating elements */}
-              <div className="absolute -z-10 top-6 right-6 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-30 animate-bounce"></div>
-              <div className="absolute -z-10 bottom-6 left-6 w-8 h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-red-200 to-red-300 rounded-full opacity-30 animate-bounce delay-1000"></div>
+          <div className="relative">
+            <div className="bg-gradient-to-br from-blue-100 via-white to-red-100 rounded-3xl h-96 flex items-center justify-center p-8">
+              <div className="text-center">
+                <img 
+                  src="/lovable-uploads/a40d16cc-2d57-43e3-9b97-33df4f281d24.png" 
+                  alt="CareSaathi Logo" 
+                  className="h-32 w-auto mx-auto mb-6"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Smart Emergency Care</h3>
+                <p className="text-gray-600 mb-4">One tap auto hospital bed booking, ambulance dispatch & guardian notification</p>
+                <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  Launching Soon!
+                </div>
+              </div>
+            </div>
+            
+            {/* Floating service icons */}
+            <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+              <Ambulance className="h-8 w-8 text-red-500" />
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
+              <Heart className="h-8 w-8 text-red-500" />
+            </div>
+            <div className="absolute top-1/2 -left-6 bg-white rounded-full p-3 shadow-lg">
+              <Hospital className="h-6 w-6 text-blue-500" />
+            </div>
+            <div className="absolute top-1/4 -right-6 bg-white rounded-full p-3 shadow-lg">
+              <Bell className="h-6 w-6 text-orange-500" />
             </div>
           </div>
-        </div>
-
-        {/* Compact Stats Section */}
-        <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mt-12 lg:mt-16 opacity-0 transition-all duration-1000 max-w-5xl mx-auto">
-          {[
-            { value: "24/7", label: "Emergency Response", icon: Clock, color: "red" },
-            { value: "1000+", label: "Partner Hospitals", icon: Hospital, color: "blue" },
-            { value: "50K+", label: "Happy Families", icon: Users, color: "red" },
-            { value: "Pan India", label: "Coverage", icon: Star, color: "blue" }
-          ].map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-3 lg:p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center group" style={{ animationDelay: `${index * 150}ms` }}>
-              <div className={`w-8 h-8 lg:w-10 lg:h-10 mx-auto mb-2 rounded-lg flex items-center justify-center ${stat.color === 'red' ? 'bg-red-100' : 'bg-blue-100'} group-hover:scale-110 transition-transform duration-300`}>
-                <stat.icon className={`h-4 w-4 lg:h-5 lg:w-5 ${stat.color === 'red' ? 'text-red-600' : 'text-blue-600'}`} />
-              </div>
-              <div className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
-              <div className="text-xs lg:text-sm text-gray-600 font-medium">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

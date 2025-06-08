@@ -1,136 +1,99 @@
 
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import ServicesBanner from '@/components/ServicesBanner';
-import ModernFeatures from '@/components/ModernFeatures';
 import About from '@/components/About';
+import Features from '@/components/Features';
+import Services from '@/components/Services';
 import ElderCare from '@/components/ElderCare';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import AiChatBox from '@/components/AiChatBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
 
 const Index = () => {
   const navigate = useNavigate();
-  const loginSectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (loginSectionRef.current) observer.observe(loginSectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
       <Hero />
-      <ServicesBanner />
-      <ModernFeatures />
       
-      {/* Compact Login Options Section */}
-      <section ref={loginSectionRef} className="py-12 bg-gray-50 opacity-0 transition-all duration-1000">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-              Get started with CareSaathi
+      {/* Login Options Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Access Your CareSaathi Portal
             </h2>
-            <p className="text-base text-gray-600">
-              Choose your portal to access our healthcare services
+            <p className="text-lg text-gray-600">
+              Choose your portal to get started with our services
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
-              <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg">👤</span>
-                </div>
-                <CardTitle className="text-base font-semibold">General Users</CardTitle>
-                <CardDescription className="text-xs text-gray-600">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-lg">General Users</CardTitle>
+                <CardDescription>
                   Book services, manage appointments
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   onClick={() => navigate('/auth?type=user')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm"
-                  size="sm"
+                  className="w-full bg-blue-600 hover:bg-blue-700"
                 >
                   User Login
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
-              <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg">🏥</span>
-                </div>
-                <CardTitle className="text-base font-semibold">Hospital Partners</CardTitle>
-                <CardDescription className="text-xs text-gray-600">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-lg">Hospital Partners</CardTitle>
+                <CardDescription>
                   Manage beds, view bookings
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   onClick={() => navigate('/auth?type=hospital')}
-                  className="w-full bg-red-600 hover:bg-red-700 rounded-lg font-medium text-sm"
-                  size="sm"
+                  className="w-full bg-green-600 hover:bg-green-700"
                 >
                   Hospital Login
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
-              <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg">🚑</span>
-                </div>
-                <CardTitle className="text-base font-semibold">Ambulance Drivers</CardTitle>
-                <CardDescription className="text-xs text-gray-600">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-lg">Ambulance Drivers</CardTitle>
+                <CardDescription>
                   Accept requests, track routes
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   onClick={() => navigate('/auth?type=ambulance')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-sm"
-                  size="sm"
+                  className="w-full bg-red-600 hover:bg-red-700"
                 >
                   Driver Login
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 bg-white">
-              <CardHeader className="text-center pb-3">
-                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg">👩‍⚕️</span>
-                </div>
-                <CardTitle className="text-base font-semibold">Caregivers</CardTitle>
-                <CardDescription className="text-xs text-gray-600">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-lg">Caregivers</CardTitle>
+                <CardDescription>
                   Manage schedule, accept bookings
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   onClick={() => navigate('/auth?type=caregiver')}
-                  className="w-full bg-red-600 hover:bg-red-700 rounded-lg font-medium text-sm"
-                  size="sm"
+                  className="w-full bg-purple-600 hover:bg-purple-700"
                 >
                   Caregiver Login
                 </Button>
@@ -138,18 +101,14 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center">
-            <Card className="inline-block max-w-xs bg-white border border-gray-100">
-              <CardContent className="p-4">
-                <div className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <span className="text-sm">⚙️</span>
-                </div>
-                <h3 className="text-base font-semibold mb-2">System Administrator</h3>
+          <div className="text-center mt-8">
+            <Card className="inline-block">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold mb-2">System Administrator</h3>
                 <Button 
                   onClick={() => navigate('/auth?type=admin')}
                   variant="outline"
-                  className="border-gray-200 text-gray-700 hover:bg-gray-50 rounded-lg font-medium text-sm"
-                  size="sm"
+                  className="border-gray-600 text-gray-700 hover:bg-gray-50"
                 >
                   Admin Access
                 </Button>
@@ -160,12 +119,11 @@ const Index = () => {
       </section>
 
       <About />
+      <Features />
+      <Services />
       <ElderCare />
       <Contact />
       <Footer />
-      
-      {/* AI Chat Box */}
-      <AiChatBox />
     </div>
   );
 };
